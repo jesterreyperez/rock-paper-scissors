@@ -24,4 +24,27 @@ let computerScore = 0; // initialize computer score
 
 function playRound(humanChoice, computerChoice) {
   humanChoice = humanChoice.toLowerCase();
+
+  if (humanChoice === computerChoice) {
+    console.log("It's a tie!"); // if choices are the same, it's a tie
+    return;
+  }
+  if (
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "paper" && computerChoice === "rock") ||
+    (humanChoice === "scissors" && computerChoice === "paper")
+  ) {
+    humanScore++; // increment human score
+    console.log(`You win! ${humanChoice} beats ${computerChoice}`); // human wins
+  } else {
+    console.log(`You lose! ${computerChoice} beats ${humanChoice}`); // computer wins
+    computerScore++; // increment computer score
+  }
 }
+
+const humanSelection = getHumanChoice(); // get human player's choice
+const computerSelection = getComputerChoice(); // get computer's choice
+
+playRound(humanSelection, computerSelection); // play a round of the game
+
+console.log(`Final Scores - You: ${humanScore}, Computer: ${computerScore}`); // display final scores
