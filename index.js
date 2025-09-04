@@ -48,3 +48,26 @@ const computerSelection = getComputerChoice(); // get computer's choice
 playRound(humanSelection, computerSelection); // play a round of the game
 
 console.log(`Final Scores - You: ${humanScore}, Computer: ${computerScore}`); // display final scores
+
+function playGame() {
+  let humanScore = 0;
+  let computerScore = 0;
+
+  for (let i = 1; i <= 5; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    console.log(`Round ${i}:`);
+    if (humanSelection === computerSelection)
+      console.log("It's a tie!");
+} else if (
+  (humanSelection === "rock" && computerSelection === "scissors") ||
+  (humanSelection === "paper" && computerSelection === "rock") ||
+  (humanSelection === "scissors" && computerSelection === "paper")
+) {
+  console.log(`You win! ${humanSelection} beats ${computerSelection}`);
+  humanScore++;
+} else {
+  console.log(`You lose! ${computerSelection} beats ${humanSelection}`);
+  computerScore++;
+}
