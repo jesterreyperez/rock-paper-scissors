@@ -71,3 +71,19 @@ function playGame() {
   console.log(`You lose! ${computerSelection} beats ${humanSelection}`);
   computerScore++;
 }
+
+console.log(`Current Scores -> Human: ${humanScore}, Computer: ${computerScore}`);
+console.log('-----------------------------------');
+}
+
+console.log("Final Results:");
+if (humanScore > computerScore) {
+  console.log("🎉 You win the game!");
+} else if (humanScore < computerScore) {
+    console.log("😢 You lose the game!");
+  } else {
+    console.log("🤝 It's a tie game!");
+  }
+
+  // Run game
+playGame();
