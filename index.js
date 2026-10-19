@@ -10,3 +10,9 @@ function getComputerChoice() {
   }
 }
 console.log(getComputerChoice());
+// Logic to get player choice
+function getHumanChoice() {
+  const humanChoice = prompt("rock, paper, scissor");
+  return humanChoice;
+}
+console.log(getHumanChoice());
