@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 // Logic to get the choice of the computer
 function getComputerChoice() {
   const computerRandomChoice = Math.random();
