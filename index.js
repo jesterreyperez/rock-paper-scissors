@@ -25,9 +25,6 @@ function playGame() {
     }
   }
 
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
-
   // Step 5: Logic to play a single round
   function playRound(humanChoice, computerChoice) {
     // Human choice to win
@@ -45,11 +42,15 @@ function playGame() {
       console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
     }
   }
+  // Logic to play game 5 rounds
+  for (let i = 0; i < 5; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
 
-  playRound(humanSelection, computerSelection);
-  console.log(
-    `Human Player score = ${humanScore} | Computer Player Score = ${computerScore}`,
-  );
+    playRound(humanSelection, computerSelection);
+    console.log(
+      `Human Player score = ${humanScore} | Computer Player Score = ${computerScore}`,
+    );
+  }
 }
-
 playGame();
